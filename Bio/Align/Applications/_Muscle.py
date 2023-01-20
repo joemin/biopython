@@ -35,7 +35,7 @@ class MuscleCommandline(AbstractCommandline):
     >>> out_file = r"C:\My Documents\aligned.fasta"
     >>> muscle_cline = MuscleCommandline(muscle_exe, input=in_file, out=out_file)
     >>> print(muscle_cline)
-    "C:\Program Files\Alignments\muscle3.8.31_i86win32.exe" -in "C:\My Documents\unaligned.fasta" -out "C:\My Documents\aligned.fasta"
+    "C:\Program Files\Alignments\muscle3.8.31_i86win32.exe" -align "C:\My Documents\unaligned.fasta" -out "C:\My Documents\aligned.fasta"
 
     You would typically run the command line with muscle_cline() or via
     the Python subprocess module, as described in the Biopython tutorial.
@@ -76,7 +76,7 @@ class MuscleCommandline(AbstractCommandline):
             # Can't use "in" as the final alias as this
             # is a reserved word in python:
             _Option(
-                ["-in", "in", "input"], "Input filename", filename=True, equate=False
+                ["-align", "in", "input"], "Input filename", filename=True, equate=False
             ),
             _Option(["-out", "out"], "Output filename", filename=True, equate=False),
             _Switch(
